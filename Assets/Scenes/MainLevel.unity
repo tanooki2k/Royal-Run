@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: a41018e9738538443944614cd3e90083, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -556,24 +556,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2963879983413257573, guid: 50cd03f37b0d80e4c8655f37e2b478e0, type: 3}
-      propertyPath: moveSpeed
-      value: 10
+      propertyPath: xClamp
+      value: 3.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2963879983413257573, guid: 50cd03f37b0d80e4c8655f37e2b478e0, type: 3}
+      propertyPath: zClamp
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3348647066443455813, guid: 50cd03f37b0d80e4c8655f37e2b478e0, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6282945226739265150, guid: 50cd03f37b0d80e4c8655f37e2b478e0, type: 3}
-      propertyPath: m_Interpolate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6282945226739265150, guid: 50cd03f37b0d80e4c8655f37e2b478e0, type: 3}
-      propertyPath: m_IsKinematic
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8968039899108451384, guid: 50cd03f37b0d80e4c8655f37e2b478e0, type: 3}
-      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

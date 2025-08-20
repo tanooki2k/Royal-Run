@@ -3,7 +3,12 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] float moveSpeed = 10f;
+    [Header("Gameplay Configurations")] 
+    [Tooltip("How fast does the player move")] [SerializeField] float moveSpeed = 10f;
+    
+    [Header("Movement Limits")] 
+    [Tooltip("How far the player can go on the x-axis")] [SerializeField] float xClamp = 5f;
+    [Tooltip("How far the player can go on the z-axis")] [SerializeField] float zClamp = 2.5f;
 
     Rigidbody _rigidBody;
     Vector2 _movement;
@@ -24,7 +29,10 @@ public class PlayerController : MonoBehaviour
         Vector3 currentPosition = _rigidBody.position;
         Vector3 moveDirection = new Vector3(_movement.x, 0f, _movement.y);
         Vector3 newPosition = currentPosition + moveDirection * (moveSpeed * Time.fixedDeltaTime);
-        
+
+        newPosition.x = Mathf.Clamp(newPosition.x, -xClamp, xClamp);
+        newPosition.z = Mathf.Clamp(newPosition.z, -zClamp, zClamp);
+
         _rigidBody.MovePosition(newPosition);
     }
 
