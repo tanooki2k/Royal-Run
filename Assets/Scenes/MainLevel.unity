@@ -594,6 +594,7 @@ MonoBehaviour:
   startingChunksAmount: 12
   chunkLength: 10
   moveSpeed: 8
+  minMoveSpeed: 2
   chunkParent: {fileID: 1328950744}
   mainCamera: {fileID: 330585543}
 --- !u!1 &1328950743

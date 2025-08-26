@@ -4,11 +4,19 @@ public class PlayerCollisionHandler : MonoBehaviour
 {
     [SerializeField] Animator animator;
     [SerializeField] float collisionCooldown = 1f;
+    [SerializeField] float adjustChangeMoveSpeedAmount = -2f;
 
-    const string hitString = "Hit";
+    const string HitString = "Hit";
     
     float _cooldownTimer;
 
+    private LevelGenerator _levelGenerator;
+
+    void Start()
+    {
+        _levelGenerator = FindFirstObjectByType<LevelGenerator>();
+    }
+    
     private void Update()
     {
         _cooldownTimer += Time.deltaTime;
@@ -18,7 +26,8 @@ public class PlayerCollisionHandler : MonoBehaviour
     {
         if (_cooldownTimer < collisionCooldown) return;
         
-        animator.SetTrigger(hitString);
+        _levelGenerator.ChangeChunkMoveSpeed(adjustChangeMoveSpeedAmount);
+        animator.SetTrigger(HitString);
         _cooldownTimer = 0f;
     }
 }

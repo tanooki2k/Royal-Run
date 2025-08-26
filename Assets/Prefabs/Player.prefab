@@ -97,6 +97,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 5747970087581574132}
+  collisionCooldown: 1
+  adjustChangeMoveSpeedAmount: -2
 --- !u!114 &8968039899108451384
 MonoBehaviour:
   m_ObjectHideFlags: 0
