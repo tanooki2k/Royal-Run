@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class PlayerCollisionHandler : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] Animator animator;
+    
+    [Header("Knockback Settings")]
     [SerializeField] float collisionCooldown = 1f;
     [SerializeField] float adjustChangeMoveSpeedAmount = -2f;
 

@@ -656,14 +656,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60f782f86ee36884ea11af3f7bcb3a9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCamera: {fileID: 330585543}
+  cameraController: {fileID: 1589664483}
   chunkPrefab: {fileID: 6867381413224516428, guid: 7ce135152140fd942ad87e62b8f23b30, type: 3}
+  chunkParent: {fileID: 1328950744}
   startingChunksAmount: 12
   chunkLength: 10
   moveSpeed: 8
   minMoveSpeed: 2
-  chunkParent: {fileID: 1328950744}
-  mainCamera: {fileID: 330585543}
-  cameraController: {fileID: 1589664483}
+  maxMoveSpeed: 20
+  minGravityZ: -22
+  maxGravityZ: -2
 --- !u!1 &1328950743
 GameObject:
   m_ObjectHideFlags: 0

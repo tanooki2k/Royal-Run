@@ -3,27 +3,43 @@ using UnityEngine;
 
 public class Chunk : MonoBehaviour
 {
-    [Header("Fence Settings")]
+    [Header("Fence Reference")] 
+    
+    [Tooltip("Insert the model to spawn as a fence (obstacle)")] 
     [SerializeField] GameObject fencePrefab;
+
     
     [Header("Apple Settings")]
+    
+    [Tooltip("Insert the reference for the apple (a prefab with colliders)")] 
     [SerializeField] GameObject applePrefab;
+
+    [Tooltip("The chances of spawning an apple per each chunk")] 
     [SerializeField] [Range(0f, 1f)] float appleSpawnChance = .3f;
-    [SerializeField] [Range(0f, 2f)] float coinSeparationLength = 2f;
+
     
-    [Header("Coin Settings")]
+    [Header("Coin Settings")] 
+    
+    [Tooltip("Insert the reference for the coin (a prefab with colliders)")] 
     [SerializeField] GameObject coinPrefab;
-    [SerializeField] [Range(0f, 1f)]  float coinSpawnChance = .5f;
+
+    [Tooltip("The chances of spawning a coin per each chunk")] [SerializeField] [Range(0f, 1f)]
+    float coinSpawnChance = .5f;
+
+    [Tooltip("The distance between each coin of a group of coins generated")] 
+    [SerializeField] [Range(0f, 2f)] float coinSeparationLength = 2f;
+
+    [Header("Lanes Position")] 
     
-    [Header("Lane Settings")]
+    [Tooltip("Determine where the fences and pick-ups will be placed")] 
     [SerializeField] float[] lanes = { -1.6f, 0f, 1.6f };
 
     private List<int> _availableLanes;
-    
+
     void Start()
     {
         _availableLanes = new List<int> { 0, 1, 2 };
-        
+
         SpawnFences();
         SpawnApple();
         SpawnCoins();
@@ -36,7 +52,7 @@ public class Chunk : MonoBehaviour
         for (int i = 0; i < fencesToSpawn; i++)
         {
             if (_availableLanes.Count <= 0) break;
-            
+
             int selectedLane = SelectLane();
 
             Vector3 spawnPosition = new Vector3(lanes[selectedLane], transform.position.y, transform.position.z);
@@ -47,7 +63,7 @@ public class Chunk : MonoBehaviour
     void SpawnApple()
     {
         if (Random.value > appleSpawnChance || _availableLanes.Count <= 0) return;
-        
+
         int selectedLane = SelectLane();
 
         Vector3 spawnPosition = new Vector3(lanes[selectedLane], transform.position.y, transform.position.z);
@@ -62,9 +78,9 @@ public class Chunk : MonoBehaviour
 
         int maxCoinsToSpawn = 6;
         int coinsToSpawn = Random.Range(1, maxCoinsToSpawn);
-        
+
         float topOfChunkZPos = transform.position.z + (coinSeparationLength * 2f);
-        
+
         for (int i = 0; i < coinsToSpawn; i++)
         {
             float spawnPositionZ = topOfChunkZPos - (i * coinSeparationLength);

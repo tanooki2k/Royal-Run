@@ -5,10 +5,8 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Gameplay Configurations")] 
     [Tooltip("How fast does the player move")] [SerializeField] float moveSpeed = 10f;
-    
-    [Header("Movement Limits")] 
-    [Tooltip("How far the player can go on the x-axis")] [SerializeField] float xClamp = 5f;
-    [Tooltip("How far the player can go on the z-axis")] [SerializeField] float zClamp = 2.5f;
+    [Tooltip("How far the player can go on the x-axis from the initial position")] [SerializeField] float xClamp = 5f;
+    [Tooltip("How far the player can go on the z-axis from the initial position")] [SerializeField] float zClamp = 2.5f;
 
     Rigidbody _rigidBody;
     Vector2 _movement;

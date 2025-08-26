@@ -3,9 +3,15 @@ using UnityEngine;
 
 public class ObstacleSpawner : MonoBehaviour
 {
+    [Header("References")]
+    [Tooltip("Insert all the obstacles to be displayed")]
     [SerializeField] GameObject[] obstaclePrefabs;
+    [Tooltip("Insert the object where the obstacles GameObjects will be stored at")]
     [SerializeField] Transform obstacleParent;
+    
+    [Header("Obstacles Settings")]
     [SerializeField] float obstacleSpawnTime = 3f;
+    [Tooltip("Determine the range of positions centered to the screen for all obstacles")] 
     [SerializeField] float spawnWidth = 8f;
 
     void Start()
