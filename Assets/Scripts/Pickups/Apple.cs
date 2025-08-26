@@ -1,9 +1,8 @@
-using System;
 using UnityEngine;
 
 public class Apple : PickUp
 {
-    [SerializeField] float increaseMoveSpeed = 3f;
+    [SerializeField] float adjustChangeMoveSpeedAmount = 3f;
 
     LevelGenerator _levelGenerator;
 
@@ -14,6 +13,6 @@ public class Apple : PickUp
 
     protected override void OnPickUp()
     {
-        _levelGenerator.ChangeChunkMoveSpeed(increaseMoveSpeed);
+        _levelGenerator.ChangeChunkMoveSpeed(adjustChangeMoveSpeedAmount);
     }
 }
