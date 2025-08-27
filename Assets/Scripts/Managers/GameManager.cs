@@ -8,8 +8,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject gameOverText;
     [SerializeField] float startTime = 5f;
 
-    private float _timeLeft;
-    private bool _gameOver = false;
+    float _timeLeft;
+    bool _gameOver;
+
+    public bool GameOver => _gameOver;
 
     private void Start()
     {
@@ -24,17 +26,17 @@ public class GameManager : MonoBehaviour
     private void DecreaseTime()
     {
         if (_gameOver) return;
-        
+
         _timeLeft -= Time.deltaTime;
         timeText.text = $"Time: {_timeLeft:F1}";
 
         if (_timeLeft <= 0f)
         {
-            GameOver();
+            PlayerGameOver();
         }
     }
 
-    void GameOver()
+    void PlayerGameOver()
     {
         _gameOver = true;
         playerController.enabled = false;
