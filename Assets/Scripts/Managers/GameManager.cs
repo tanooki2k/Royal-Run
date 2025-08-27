@@ -13,6 +13,11 @@ public class GameManager : MonoBehaviour
 
     public bool GameOver => _gameOver;
 
+    public void ChangeTimeBy(float timeAmountEarned)
+    {
+        _timeLeft += timeAmountEarned;
+    }
+    
     private void Start()
     {
         _timeLeft = startTime;
