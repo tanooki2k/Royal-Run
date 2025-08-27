@@ -694,7 +694,7 @@ MonoBehaviour:
   - {fileID: 8126500202433135800, guid: bc403d92fff076a4199ff2247a097c36, type: 3}
   obstacleParent: {fileID: 610512829}
   obstacleSpawnTime: 1
-  spawnWidth: 8
+  spawnWidth: 7
 --- !u!4 &610512829
 Transform:
   m_ObjectHideFlags: 0
