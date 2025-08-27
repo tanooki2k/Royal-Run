@@ -841,6 +841,7 @@ MonoBehaviour:
   cameraController: {fileID: 1589664483}
   chunkPrefab: {fileID: 6867381413224516428, guid: 7ce135152140fd942ad87e62b8f23b30, type: 3}
   chunkParent: {fileID: 1328950744}
+  scoreManager: {fileID: 1363172640}
   startingChunksAmount: 12
   chunkLength: 10
   moveSpeed: 8

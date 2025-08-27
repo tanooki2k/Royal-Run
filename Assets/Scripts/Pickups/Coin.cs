@@ -7,9 +7,9 @@ public class Coin : PickUp
     
     ScoreManager _scoreManager;
 
-    private void Start()
+    public void Init(ScoreManager scoreManager)
     {
-        _scoreManager = FindFirstObjectByType<ScoreManager>();
+        this._scoreManager = scoreManager;
     }
 
     protected override void OnPickUp()
