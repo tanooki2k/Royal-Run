@@ -14,6 +14,7 @@ public class Rock : MonoBehaviour
     void Awake()
     {
         _cinemachineImpulseSource = GetComponent<CinemachineImpulseSource>();
+        _collisionTimer = collisionCooldown;
     }
 
     private void Update()
